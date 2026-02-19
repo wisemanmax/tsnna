@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Overview | World's End Esports HQ</title>
+  <title>Knowledge Base | World's End Esports HQ</title>
   <link rel="stylesheet" href="assets/styles/main.css" />
 </head>
-<body data-page="overview">
+<body data-page="knowledge">
   <div class="layout">
     <aside class="sidebar">
       <div class="brand">
@@ -32,8 +32,8 @@
     <main class="main">
       <header class="header">
         <div>
-          <h2>Overview</h2>
-          <p>Centralized command center for leadership-level review.</p>
+          <h2>Knowledge Base</h2>
+          <p>Comprehensive tactical repository across all departments.</p>
         </div>
         <div class="badges">
           <span class="badge">ISO-Inspired Process</span>
@@ -48,13 +48,26 @@
   <article class="card"><h3>Compliance Readiness</h3><div class="kpi">98%</div><p>Travel docs, contracts, and partner obligations are validated and auditable.</p></article>
 </section>
 
-<h3 class="section-title">Executive Snapshot</h3>
-<div class="grid cols-2">
-  <article class="card"><h3>North America Program</h3><p>Focuses on late-game macro discipline, vision denial timing, and controlled Baron setups with pre-defined fallback calls.</p></article>
-  <article class="card"><h3>EMEA Program</h3><p>Targets lane-priority opening trees and objective-trade logic to maintain gold stability under high pressure drafts.</p></article>
-  <article class="card"><h3>Academy Pipeline</h3><p>Runs monthly readiness checkpoints for promoted talent: communication quality, champion depth, and stress resilience.</p></article>
-  <article class="card"><h3>Broadcast & Content</h3><p>Uses a campaign calendar linked to match weeks, sponsor milestones, and player media windows.</p></article>
+<section class="card">
+  <h3>Searchable Playbook Knowledge Base</h3>
+  <p>Structured data repository for tactical protocols. This page demonstrates scalable architecture with dedicated data modules and rendered subsets.</p>
+</section>
+<h3 class="section-title">Highlighted Entries</h3>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>ID</th><th>Title</th><th>Category</th><th>Objective</th><th>Owner</th><th>KPI</th></tr></thead>
+    <tbody id="kb-body"></tbody>
+  </table>
 </div>
+<script type="module">
+  import { playbooks } from './assets/js/knowledge-base.js';
+  const body = document.querySelector('#kb-body');
+  for (const item of playbooks.slice(0, 120)) {
+    const row = document.createElement('tr');
+    row.innerHTML = `<td>${item.id}</td><td>${item.title}</td><td>${item.category}</td><td>${item.objective}</td><td>${item.owner}</td><td>${item.kpi}</td>`;
+    body.appendChild(row);
+  }
+</script>
 
       <p class="footer-note">World's End internal platform · Designed for scalable multi-team navigation.</p>
     </main>
